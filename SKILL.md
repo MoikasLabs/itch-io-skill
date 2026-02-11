@@ -433,6 +433,74 @@ define gui.about = _p("""
 
 Use `scripts/renpy-publish.js` to check builds and generate butler commands.
 
+## Feedback & Community
+
+Collect player feedback, ratings, and reviews from your itch.io game pages.
+
+### Fetching Comments
+
+```bash
+node feedback.js 12345 comments
+```
+
+Output:
+```
+💬 Recent Comments (10):
+
+@player1 · 2/10/26 😊 Positive
+   "Love the art style! Controls feel great too."
+
+@player2 · 2/9/26 😞 Negative
+   "Found a bug on level 3, game crashes when..."
+```
+
+### Rating Overview
+
+```bash
+node feedback.js 12345 ratings
+```
+
+Shows:
+- Average rating (0-5 stars)
+- Total number of ratings
+- Views, downloads, purchases
+
+### Sentiment Analysis
+
+Basic keyword-based sentiment detection on comments:
+
+```bash
+node feedback.js 12345 sentiment
+```
+
+Output:
+```
+📊 Sentiment Analysis (47 comments):
+
+   😊 Positive: 32 (68%)
+   😐 Neutral:  10 (21%)
+   😞 Negative: 5 (11%)
+
+🔍 Common keywords: bug, good, graphics, level, love
+```
+
+### Full Feedback Report
+
+```bash
+node feedback.js 12345 report
+```
+
+Generates comprehensive report with ratings, comments, sentiment breakdown, and action items based on common keywords (bugs, crashes, etc.).
+
+### Web Dashboard
+
+For complete analytics:
+- **Game Analytics:** https://itch.io/game/analytics/GAME_ID
+- **Community:** Comments appear on game page
+- **Devlog:** Post updates to engage players
+
+Use `scripts/feedback.js` for automated feedback collection and weekly summaries.
+
 ## Resources
 
 - Butler docs: https://itch.io/docs/butler/
